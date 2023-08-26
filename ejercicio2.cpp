@@ -63,9 +63,7 @@ int main() {
     // Escribir los números ordenados en un archivo
     std::ofstream sortedFile("numeros_ordenados.txt");
     auto start_write = std::chrono::high_resolution_clock::now();
-    #pragma omp parallel for
     for (int i = 0; i < N; ++i) {
-        #pragma omp critical
         {
             sortedFile << Array[i];
             if (i < N - 1) {
